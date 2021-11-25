@@ -10,14 +10,25 @@
     "author": "",
     "license": "MIT",
     "dependencies": {
-        "vue": "^3.1.4"
+        "vue-i18n": "^9.2.0-beta.20",
+        "vue": "^3.2.22"
+    },
+    "resolutions": {
+        "@storybook/csf-tools": "6.4.0-rc.6",
+        "@storybook/source-loader": "6.4.0-rc.6",
+        "@storybook/core-events": "6.4.0-rc.6"
     },
     "devDependencies": {
-        "@storybook/addon-a11y": "^6.4.0-rc.2",
-        "@storybook/addon-essentials": "^6.4.0-rc.2",
-        "@storybook/vue3": "^6.4.0-rc.2",
-        "@vitejs/plugin-vue": "^1.2.4",
+        "@intlify/vite-plugin-vue-i18n": "^3.2.1",
+        "@storybook/addon-a11y": "6.4.0-rc.6",
+        "@storybook/addon-essentials": "6.4.0-rc.6",
+        "@storybook/addon-links": "6.4.0-rc.6",
+        "@storybook/vue3": "6.4.0-rc.6",
+        "@vitejs/plugin-vue": "1.10.0",
         "storybook-builder-vite": "^0.1.9",
-        "vite": "^2.4.1"
+        "vite-plugin-windicss": "^1.5.1",
+        "vite": "2.6.14",
+        "unplugin-icons": "^0.12.18",
+        "unplugin-vue-components": "0.17.2"
     }
 }

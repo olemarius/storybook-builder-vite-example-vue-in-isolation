@@ -1,16 +1,18 @@
 <template>
     <button type="button" :class="classes" @click="onClick" :style="style">
-        {{ label }}
+        <Test></Test>
     </button>
 </template>
 
 <script>
 import './button.css';
 import { reactive, computed } from 'vue';
-
+import Test from '@/stories/Test.vue';
 export default {
     name: 'my-button',
-
+    components: {
+        Test
+    },
     props: {
         /**
          * The label of the button
