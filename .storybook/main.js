@@ -1,4 +1,3 @@
-const { loadConfigFromFile, mergeConfig } = require('vite');
 const { resolve } = require('path');
 const WindiCSS = require('vite-plugin-windicss').default;
 const vue = require('@vitejs/plugin-vue').default;
@@ -24,28 +23,25 @@ module.exports = {
     async viteFinal(config) {
         config.resolve.alias['@'] = resolve(__dirname, '../src');
         config.plugins.push(WindiCSS());
-        Icons({
-            scale: 1,
-            compiler: 'vue3',
-            autoInstall: true
-        });
-        Components({
-            dts: true,
-            dirs: [
-                'src/components',
-                'src/pages/Orienteering/components'
-            ],
-            deep: true,
-            resolvers: IconsResolver({
-                componentPrefix: 'icon'
-            }),
-        });
+        config.plugins.push(
+            Icons({
+                scale: 1,
+                compiler: 'vue3',
+                autoInstall: true
+            })
+        );
+        config.plugins.push(
+            Components({
+                dts: true,
+                deep: true,
+                resolvers: IconsResolver({
+                    componentPrefix: 'icon'
+                }),
+            })
+        );
         config.plugins.push(
             vueI18n({
                 runtimeOnly: false,
-                include: [
-                    resolve(__dirname, './src/locales/**'),
-                ]
             })
         );
         // enabling this will cause 'Component is missing template or render function' error
